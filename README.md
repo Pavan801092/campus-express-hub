@@ -3,6 +3,8 @@
 CampusConnect is a real-time full-stack student hub platform built with Lovable + Supabase.
 It empowers students to manage academics, join clubs, register for hackathons, collaborate on projects, report lost items, and chat with an AI assistant — all in one place.
 
+https://campus-express-hub.lovable.app
+
 🚀 Features
 👤 User & Auth
 
