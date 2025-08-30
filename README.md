@@ -1,73 +1,162 @@
-# Welcome to your Lovable project
+🎓 CampusConnect – Real-Time Student Hub
 
-## Project info
+CampusConnect is a real-time full-stack student hub platform built with Lovable + Supabase.
+It empowers students to manage academics, join clubs, register for hackathons, collaborate on projects, report lost items, and chat with an AI assistant — all in one place.
 
-**URL**: https://lovable.dev/projects/9c90b3f8-3387-4b6a-b1ab-1e62d0725e1a
+🚀 Features
+👤 User & Auth
 
-## How can I edit this code?
+Email/password authentication (Supabase Auth)
 
-There are several ways of editing your application.
+User registration with profile info & avatar upload
 
-**Use Lovable**
+Editable profile dashboard
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9c90b3f8-3387-4b6a-b1ab-1e62d0725e1a) and start prompting.
+🏠 Dashboard
 
-Changes made via Lovable will be committed automatically to this repo.
+Personalized welcome hero
 
-**Use your preferred IDE**
+Real-time counters (Assignments, Clubs, Projects, Events)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Recent activity feed & quick actions
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+📚 Academics
 
-Follow these steps:
+Assignment management (add/edit/delete)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Status tracking (Pending / In Progress / Completed)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Due-date filtering
 
-# Step 3: Install the necessary dependencies.
-npm i
+AI Tutor powered by Google API
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+🎯 Clubs & Hackathon
+
+Explore clubs by category (Technical, Cultural, Sports)
+
+Join/Leave clubs → real-time member count updates
+
+Hackathon registration with live participant list
+
+Event details + quick registration
+
+💡 Projects
+
+Create projects with title, tags, difficulty, team size
+
+Join/Leave project with live team updates
+
+Member list displayed dynamically
+
+🔍 Lost & Found
+
+Report Lost Item with details + image upload
+
+Report Found Item with finder info
+
+Generate QR codes linked to lost items
+
+Real-time gallery with images & details
+
+🤖 AI Assistant
+
+Real-time chatbot with Google Gemini / Perplexity API
+
+Typing indicators & conversation history
+
+Quick suggestion chips (e.g., Upcoming events?, Deadlines?)
+
+⚡ Real-Time Experience
+
+Supabase real-time subscriptions for counters & activity feed
+
+Toast notifications for every action
+
+Responsive design with smooth animations
+
+🛠️ Tech Stack
+
+Frontend: React + Tailwind CSS (Lovable framework)
+
+Backend/DB: Supabase (Auth, Database, Storage, Realtime)
+
+AI API: Google Gemini / Perplexity API
+
+QR Codes: qrcode npm package
+
+Hosting: Lovable
+
+📂 Project Structure
+CampusConnect/
+├── src/
+│   ├── components/      # Reusable UI components
+│   ├── pages/           # Dashboard, Academics, Clubs, Projects, Lost & Found, AI Assistant
+│   ├── utils/           # API & Supabase helpers
+│   ├── App.tsx          # Main app with routing
+│   └── index.tsx        # Entry point
+├── public/              # Static assets
+├── supabase/            # Database schema & migrations
+├── package.json
+└── README.md
+
+⚙️ Setup Instructions
+1️⃣ Clone Repository
+git clone https://github.com/your-username/campusconnect.git
+cd campusconnect
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Setup Supabase
+
+Create a Supabase project → https://supabase.com
+
+Copy Project URL & Anon Key
+
+Add to .env file:
+
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+VITE_AI_API_KEY=your-google-or-perplexity-api-key
+
+4️⃣ Run Locally
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+5️⃣ Deploy on Lovable
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Open Lovable
 
-**Use GitHub Codespaces**
+Paste project into editor
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Connect Supabase (green button top-right)
 
-## What technologies are used for this project?
+Deploy 🚀
 
-This project is built with:
+🗄️ Database Schema (Supabase)
+Tables
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+users → id, name, email, branch, year, avatar_url
 
-## How can I deploy this project?
+assignments → id, title, status, due_date, user_id
 
-Simply open [Lovable](https://lovable.dev/projects/9c90b3f8-3387-4b6a-b1ab-1e62d0725e1a) and click on Share -> Publish.
+clubs → id, name, category, member_count
 
-## Can I connect a custom domain to my Lovable project?
+club_members → club_id, user_id
 
-Yes, you can!
+projects → id, title, tags, difficulty, team_size
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+project_members → project_id, user_id
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+lost_items → id, title, description, location, image_url, status
+
+hackathon_registrations → id, user_id, event_id
+
+🎨 UI Highlights
+
+Gradient purple/blue theme
+
+Responsive layouts (desktop & mobile)
+
+Hover effects, shadows & smooth transitions
+
+Toasts for success/error actions
